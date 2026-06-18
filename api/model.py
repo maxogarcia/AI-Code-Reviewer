@@ -49,7 +49,7 @@ class InferenceEngine:
             quantization_config=_bnb_config(),
             device_map="auto",
             trust_remote_code=True,
-            torch_dtype=torch.bfloat16,
+            dtype=torch.bfloat16,
         )
         model = PeftModel.from_pretrained(base, ADAPTER_DIR)
         model.eval()
@@ -78,16 +78,19 @@ class InferenceEngine:
             {"role": "user", "content": user_content},
         ]
 
-        input_ids = self._tokenizer.apply_chat_template(
+        encoded = self._tokenizer.apply_chat_template(
             messages,
             tokenize=True,
             add_generation_prompt=True,
             return_tensors="pt",
-        ).to(self._model.device)
+        )
+        # Newer transformers returns BatchEncoding instead of a raw tensor
+        input_ids = (encoded if isinstance(encoded, torch.Tensor) else encoded["input_ids"]).to(self._model.device)
 
         with torch.inference_mode():
             output_ids = self._model.generate(
                 input_ids,
+                attention_mask=torch.ones_like(input_ids),
                 max_new_tokens=max_new_tokens,
                 do_sample=False,
                 temperature=None,
