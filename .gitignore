@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ML artifacts — model weights live on HuggingFace Hub
+*.safetensors
+outputs/qlora-adapter/checkpoint-*/
+mlruns/
+mlflow.db
