@@ -1,0 +1,208 @@
+/* Reset boilerplate already in index.css — only component styles here */
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+  font-family: system-ui, sans-serif;
+}
+
+.app-header {
+  text-align: center;
+  padding: 40px 0 24px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 32px;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: #1a202c;
+}
+
+.subtitle {
+  color: #718096;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Editor */
+.editor-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.editor-section label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.editor-section textarea {
+  width: 100%;
+  height: 280px;
+  padding: 16px;
+  font-family: "Fira Code", "Cascadia Code", monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  background: #f7fafc;
+  color: #2d3748;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.editor-section textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  background: #fff;
+}
+
+.submit-btn {
+  align-self: flex-start;
+  padding: 10px 28px;
+  background: #667eea;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #5a67d8;
+}
+
+.submit-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Error */
+.error-banner {
+  background: #fff5f5;
+  border: 1px solid #feb2b2;
+  color: #c53030;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* Results */
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.review-box {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.review-box h2 {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+  color: #2d3748;
+}
+
+.review-text {
+  white-space: pre-wrap;
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #2d3748;
+  margin: 0;
+}
+
+/* Examples */
+.examples h2 {
+  font-size: 1rem;
+  color: #4a5568;
+  margin: 0 0 12px;
+}
+
+.example-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.example-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #f7fafc;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4a5568;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.example-toggle:hover {
+  background: #edf2f7;
+}
+
+.distance {
+  color: #718096;
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin-left: auto;
+}
+
+.chevron {
+  font-size: 0.7rem;
+  color: #a0aec0;
+}
+
+.example-body {
+  padding: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.example-body h4 {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #718096;
+}
+
+.example-body pre {
+  white-space: pre-wrap;
+  font-family: "Fira Code", monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  background: #f7fafc;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 0 0 16px;
+  color: #2d3748;
+  overflow-x: auto;
+}
+
+.example-body pre:last-child {
+  margin-bottom: 0;
+}
